@@ -1,0 +1,148 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #121212;
+        --text: #eaeaea;
+        --border: #333;
+        --table-bg: #1e1e1e;
+        --btn-bg: #2d7ff9;
+        --hover-bg: #2a2a2a;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #fafafa;
+        --text: #222;
+        --border: #ddd;
+        --table-bg: #fff;
+        --btn-bg: #1976d2;
+        --hover-bg: #f5f5f5;
+    }
+}
+
+.container {
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 24px;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.title {
+    margin-bottom: 16px;
+}
+
+.toolbar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.input {
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background-color: var(--table-bg);
+    color: var(--text);
+    flex: 0 0 200px;
+}
+
+.primaryBtn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--btn-bg);
+    color: white;
+    cursor: pointer;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--table-bg);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.table th {
+    text-align: left;
+    padding: 10px;
+    background-color: var(--hover-bg);
+}
+
+.table td {
+    padding: 10px;
+    border-top: 1px solid var(--border);
+}
+
+.hostname {
+    font-weight: 500;
+}
+
+.statusDot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.online {
+    background-color: #4caf50;
+}
+
+.offline {
+    background-color: #777;
+}
+
+.upload {
+    color: #2ecc71;
+}
+
+.download {
+    color: #f39c12;
+}
+
+.detailBtn {
+    padding: 4px 8px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: none;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.detailBtn:hover {
+    background-color: var(--hover-bg);
+}
+
+.pagination {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: var(--table-bg);
+    color: var(--text);
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-height: 80%;
+    overflow: auto;
+}
