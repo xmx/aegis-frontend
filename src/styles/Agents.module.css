@@ -26,7 +26,7 @@
     min-height: 100vh;
     padding: 24px;
     transition: background-color 0.3s, color 0.3s;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: "IBM Plex Mono", Consolas, "Microsoft YaHei", "PingFang SC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .title {

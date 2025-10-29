@@ -1,3 +1,15 @@
+export interface Agent {
+    id: string;
+    machine_id: string;
+    status: boolean;
+    broker?: Broker;
+    networks?: Network[];
+    tunnel_stat?: TunnelStat;
+    execute_stat?: ExecuteStat;
+    created_at: string;
+    updated_at: string;
+}
+
 export interface Network {
     name: string;
     index: number;
@@ -33,23 +45,4 @@ export interface ExecuteStat {
 export interface Broker {
     id: string;
     name: string;
-}
-
-export interface Agent {
-    id: string;
-    machine_id: string;
-    status: boolean;
-    broker?: Broker;
-    networks?: Network[];
-    tunnel_stat?: TunnelStat;
-    execute_stat?: ExecuteStat;
-    created_at: string;
-    updated_at: string;
-}
-
-export interface AgentListResponse {
-    page: number;
-    size: number;
-    count: number;
-    records: Agent[];
 }
