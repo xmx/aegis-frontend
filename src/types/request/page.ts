@@ -8,7 +8,7 @@ export class Page {
         this.size = 10
     }
 
-    toURLSearchParams(params: URLSearchParams) {
+    public toURLSearchParams(params?: URLSearchParams) {
         if (!params) {
             params = new URLSearchParams()
         }

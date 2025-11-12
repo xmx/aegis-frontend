@@ -3,10 +3,11 @@ import {ThemeProvider} from "@/components/theme-provider"
 import {Pagination} from "@/components/ui/pagination"
 import * as resnode from "@/types/response/node"
 import * as respage from "@/types/response/page"
+import * as reqpage from "@/types/request/page"
 
 function App() {
     const [brokers, setBrokers] = useState<resnode.Broker[]>([])
-    const [page, setPage] = useState(1)
+    const [page, setPage] = useState(new reqpage.Page())
     const [size] = useState(10)
     const [count, setCount] = useState(0)
     const [loading, setLoading] = useState(false)
@@ -18,7 +19,7 @@ function App() {
             setLoading(true)
             setError(null)
             try {
-                const res = await fetch(`/api/brokers?page=${page}&size=${size}`, {
+                const res = await fetch(`/api/brokers?${page.toURLSearchParams().toString()}`, {
                     signal: controller.signal
                 })
                 if (!res.ok) throw new Error(`HTTP ${res.status}`)
